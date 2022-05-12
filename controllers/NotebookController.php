@@ -102,6 +102,8 @@ class NotebookController extends Controller
 
         if ($this->request->isPost) {
 
+            // saves the user id
+
             $model->created_by = \Yii::$app->user->identity->id;
             
             if ($model->load($this->request->post()) && $model->save()) {
